@@ -30,7 +30,6 @@ const success = (api) => {
         });
       });
       api.addTexture(
-        //"https://example.org/texture.png",
         function (err, textureUid) {
           if (!err) {
             window.console.log("New texture registered with UID", textureUid);
