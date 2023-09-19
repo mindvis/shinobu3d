@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - sketchfab viewer api sample</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Shinobu Studios 3D Viewer</title>
 
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<iframe class="sketchfab" id="api-frame"></iframe>
-<!-- partial -->
+
+  <div class="loading-screen">
+    <div class="loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+  <!-- partial:index.partial.html -->
+  <iframe class="sketchfab" id="api-frame"></iframe>
+  <!-- partial -->
   <script src='https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.3/dat.gui.min.js'></script><script  src="./script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.3/dat.gui.min.js'></script>
+  <script src="./script.js"></script>
 
 </body>
+
 </html>
