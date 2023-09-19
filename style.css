@@ -40,7 +40,7 @@ body {
 }
 
 iframe {
-  display: none; /* Initially hide the iframe */
+ /* display: none; /* Initially hide the iframe */
   position: fixed;
   top: 0;
   left: 0;
