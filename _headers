@@ -1,2 +1,2 @@
 /*
-  Permissions-Policy: accelerometer=(), gyroscope=()
+  Permissions-Policy: accelerometer=(self), gyroscope=(self)
