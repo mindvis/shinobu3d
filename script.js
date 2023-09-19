@@ -1,5 +1,60 @@
 const success = (api) => {
-  api.start(() => console.log("started"));
+  api.start(() => {
+    console.log("started");
+    const loadingScreen = document.querySelector(".loading-screen");
+    const iframe = document.getElementById("api-frame");
+
+    loadingScreen.style.display = "none"; // Hide loading screen
+    iframe.style.display = "block";
+
+    api.addEventListener("viewerready", () => {
+      api.getNodeMap(function (err, nodes) {
+        if (!err) {
+          window.console.log(nodes); // [ ... ]
+        }
+      });
+      api.getMaterialList(function (err, materials) {
+        if (!err) {
+          window.console.log(materials);
+        }
+      });
+      api.getMaterialList(function (err, materials) {
+        // Turn off the diffuse on the first material
+        var materialToUpdate = materials[0];
+        materialToUpdate.channels.DiffuseColor.enable = false;
+        window.console.log(materialToUpdate);
+
+        // Apply the change
+        api.setMaterial(materialToUpdate, function () {
+          window.console.log("Material updated");
+        });
+      });
+      api.addTexture(
+        "https://example.org/texture.png",
+        function (err, textureUid) {
+          if (!err) {
+            window.console.log("New texture registered with UID", textureUid);
+          }
+        }
+      );
+      api.getMaterialList(function (err, materials) {
+        if (!err) {
+          window.console.log(materials);
+        }
+      });
+      api.getMaterialList(function (err, materials) {
+        // Turn off the diffuse on the first material
+        var materialToUpdate = materials[0];
+        materialToUpdate.channels.DiffuseColor.enable = false;
+        window.console.log(materialToUpdate);
+
+        // Apply the change
+        api.setMaterial(materialToUpdate, function () {
+          window.console.log("Material updated");
+        });
+      });
+    });
+  });
 };
 
 var iframe = document.getElementById("api-frame");
