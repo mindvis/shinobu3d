@@ -41,7 +41,7 @@ body {
 
 iframe {
  /* display: none; /* Initially hide the iframe */
-  position: fixed;
+  position: flex;
   top: 0;
   left: 0;
   height: 100%; /* Set height to 100% of the viewport height */
